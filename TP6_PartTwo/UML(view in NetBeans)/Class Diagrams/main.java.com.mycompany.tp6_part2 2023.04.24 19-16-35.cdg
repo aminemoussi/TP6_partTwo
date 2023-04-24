@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.com.mycompany.tp6_part2">
+  <ClassDiagramComponents>
+    <Class name="Accessoires" package="com.mycompany.tp6_part2" visibility="public" xPosition="-4.0" yPosition="1132.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="re"/>
+          <Argument type="String" name="di"/>
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="get_name" returnType="void" visibility="public"/>
+        <Method name="set_name" returnType="void" visibility="public">
+          <Argument type="String" name="name1"/>
+        </Method>
+        <Method name="print_info" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Amphitheater" package="com.mycompany.tp6_part2" visibility="public" xPosition="130.0" yPosition="117.0">
+      <Fields>
+        <Field name="Availability" type="Boolean" visibility="public"/>
+        <Field name="materials_Amphitheater" type="ArrayList&lt;Materials&gt;" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="building_id"/>
+          <Argument type="String" name="building_name"/>
+          <Argument type="double" name="building_area"/>
+          <Argument type="int" name="Capacity"/>
+          <Argument type="Boolean" name="Availability"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="print_amphitheater_infos" returnType="void" visibility="public"/>
+        <Method name="occupation" returnType="void" visibility="public"/>
+        <Method name="add_material_to_Amphitheater" returnType="void" visibility="public">
+          <Argument type="Materials" name="item"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Block" package="com.mycompany.tp6_part2" visibility="public" xPosition="2419.0" yPosition="753.0">
+      <Fields>
+        <Field name="Block_Name" type="String" visibility="public"/>
+        <Field name="Block_Localisation" type="String" visibility="public"/>
+        <Field name="WallsColor" type="String" visibility="public"/>
+        <Field name="dept" type="Departement" visibility="public"/>
+        <Field name="buildings" type="ArrayList&lt;Building&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="Block_Name"/>
+          <Argument type="String" name="Block_Localisation"/>
+          <Argument type="String" name="WallsColor"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setBuildings" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Building&gt;" name="building"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Building" package="com.mycompany.tp6_part2" visibility="public" isAbstract="true" xPosition="1103.0" yPosition="-4.0">
+      <Fields>
+        <Field name="building_id" type="int" visibility="public"/>
+        <Field name="building_name" type="String" visibility="protected"/>
+        <Field name="building_area" type="double" visibility="protected"/>
+        <Field name="Capacity" type="int" visibility="protected"/>
+        <Field name="block" type="Block" visibility="public"/>
+        <Field name="materials" type="ArrayList&lt;Materials&gt;" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="building_id"/>
+          <Argument type="String" name="building_name"/>
+          <Argument type="double" name="building_area"/>
+          <Argument type="int" name="cap"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="occupation" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Bureau" package="com.mycompany.tp6_part2" visibility="public" xPosition="962.0" yPosition="575.0">
+      <Fields>
+        <Field name="bureau_name" type="String" visibility="public"/>
+        <Field name="materials_Bureau" type="ArrayList&lt;Materials&gt;" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="building_id"/>
+          <Argument type="String" name="building_name"/>
+          <Argument type="double" name="building_area"/>
+          <Argument type="int" name="Capacity"/>
+          <Argument type="String" name="bureau_name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="print_bureau_infos" returnType="void" visibility="public"/>
+        <Method name="occupation" returnType="void" visibility="public"/>
+        <Method name="add_material_to_Bureau" returnType="void" visibility="public">
+          <Argument type="Materials" name="item"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DataShow" package="com.mycompany.tp6_part2" visibility="public" xPosition="426.0" yPosition="1268.0">
+      <Fields>
+        <Field name="brand_name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="re"/>
+          <Argument type="String" name="di"/>
+          <Argument type="String" name="bn"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="get_brand_name" returnType="void" visibility="public"/>
+        <Method name="set_brand_name" returnType="void" visibility="public">
+          <Argument type="String" name="bn"/>
+        </Method>
+        <Method name="print_info" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Departement" package="com.mycompany.tp6_part2" visibility="public" xPosition="3076.0" yPosition="420.0">
+      <Fields>
+        <Field name="id" type="int" visibility="public"/>
+        <Field name="DepartmentName" type="String" visibility="private"/>
+        <Field name="Code" type="String" visibility="private"/>
+        <Field name="HeadName" type="String" visibility="private"/>
+        <Field name="Email" type="String" visibility="private"/>
+        <Field name="inst" type="Institution" visibility="public"/>
+        <Field name="bl_liste" type="ArrayList&lt;Block&gt;" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="DepartementName"/>
+          <Argument type="String" name="Code"/>
+          <Argument type="String" name="HeadName"/>
+          <Argument type="String" name="Email"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="print_departement_infos" returnType="void" visibility="public"/>
+        <Method name="getStudentList" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Institution" package="com.mycompany.tp6_part2" visibility="public" xPosition="3994.0" yPosition="62.0">
+      <Fields>
+        <Field name="id" type="int" visibility="public"/>
+        <Field name="Type" type="String" visibility="private"/>
+        <Field name="Address" type="String" visibility="private"/>
+        <Field name="Phone_Number" type="String" visibility="private"/>
+        <Field name="Logo_Url" type="String" visibility="private"/>
+        <Field name="dpt_1" type="Departement" visibility="public"/>
+        <Field name="dpt_2" type="Departement" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="Type"/>
+          <Argument type="String" name="Address"/>
+          <Argument type="String" name="Phone_Number"/>
+          <Argument type="String" name="Logo_Url"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="main" returnType="String[]" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="GraduateStudent" returnType="void" visibility="public"/>
+        <Method name="get_type" returnType="void" visibility="public"/>
+        <Method name="set_type" returnType="void" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="get_address" returnType="void" visibility="public"/>
+        <Method name="set_address" returnType="void" visibility="public">
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="get_phonenumber" returnType="void" visibility="public"/>
+        <Method name="set_phonenumber" returnType="void" visibility="public">
+          <Argument type="String" name="phonenumber"/>
+        </Method>
+        <Method name="get_logo_url" returnType="void" visibility="public"/>
+        <Method name="set_logo_url" returnType="void" visibility="public">
+          <Argument type="String" name="logo_url"/>
+        </Method>
+        <Method name="setDepartement" returnType="void" visibility="public">
+          <Argument type="Departement[]" name="dept"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Main" package="com.mycompany.tp6_part2" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Materials" package="com.mycompany.tp6_part2" visibility="public" isAbstract="true" xPosition="638.0" yPosition="937.0">
+      <Fields>
+        <Field name="id" type="int" visibility="public"/>
+        <Field name="regestration_number" type="String" visibility="public"/>
+        <Field name="date_installation" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="re"/>
+          <Argument type="String" name="di"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="PC" package="com.mycompany.tp6_part2" visibility="public" xPosition="95.0" yPosition="734.0">
+      <Fields>
+        <Field name="cpu" type="String" visibility="private"/>
+        <Field name="ram" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="re"/>
+          <Argument type="String" name="di"/>
+          <Argument type="String" name="cpu"/>
+          <Argument type="String" name="ram"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="get_cpu" returnType="void" visibility="public"/>
+        <Method name="set_cpu" returnType="void" visibility="public">
+          <Argument type="String" name="cpu1"/>
+        </Method>
+        <Method name="get_ram" returnType="void" visibility="public"/>
+        <Method name="set_ram" returnType="void" visibility="public">
+          <Argument type="String" name="ram1"/>
+        </Method>
+        <Method name="print_info" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Printer" package="com.mycompany.tp6_part2" visibility="public" xPosition="709.0" yPosition="1541.0">
+      <Fields>
+        <Field name="brand_name" type="String" visibility="private"/>
+        <Field name="capacity" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="re"/>
+          <Argument type="String" name="di"/>
+          <Argument type="String" name="bn"/>
+          <Argument type="int" name="cap"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="get_brand_name" returnType="void" visibility="public"/>
+        <Method name="set_brand_name" returnType="void" visibility="public">
+          <Argument type="String" name="bn"/>
+        </Method>
+        <Method name="get_capacity" returnType="void" visibility="public"/>
+        <Method name="set_capacity" returnType="void" visibility="public">
+          <Argument type="int" name="cap"/>
+        </Method>
+        <Method name="print_info" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Salle" package="com.mycompany.tp6_part2" visibility="public" xPosition="1600.0" yPosition="865.0">
+      <Fields>
+        <Field name="accessoire" type="String" visibility="public"/>
+        <Field name="materials_Salle" type="ArrayList&lt;Materials&gt;" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="accessoire"/>
+          <Argument type="int" name="building_id"/>
+          <Argument type="String" name="building_name"/>
+          <Argument type="double" name="building_area"/>
+          <Argument type="int" name="Capacity"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="print_salle_infos" returnType="void" visibility="public"/>
+        <Method name="occupation" returnType="void" visibility="public"/>
+        <Method name="add_material_to_Salle" returnType="void" visibility="public">
+          <Argument type="Materials" name="item"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Service_RH" package="com.mycompany.tp6_part2" visibility="public" xPosition="3315.0" yPosition="1902.0">
+      <Fields>
+        <Field name="EmployeeID" type="int" visibility="public"/>
+        <Field name="Skills" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="employee"/>
+          <Argument type="String" name="sklills"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="FeedBack" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Service_Teaching" package="com.mycompany.tp6_part2" visibility="public" xPosition="3813.0" yPosition="1902.0">
+      <Fields>
+        <Field name="Schedule" type="String" visibility="private"/>
+        <Field name="EnrolledStudents" type="String" visibility="private"/>
+        <Field name="StartDate" type="String" visibility="private"/>
+        <Field name="EndDate" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="schdl"/>
+          <Argument type="String" name="enrldstd"/>
+          <Argument type="String" name="startdate"/>
+          <Argument type="String" name="enddate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="get_Schedule" returnType="void" visibility="public"/>
+        <Method name="set_Schedule" returnType="void" visibility="public">
+          <Argument type="String" name="S"/>
+        </Method>
+        <Method name="get_EnrolledStudents" returnType="void" visibility="public"/>
+        <Method name="Set_EnrolledStudents" returnType="void" visibility="public">
+          <Argument type="String" name="ES"/>
+        </Method>
+        <Method name="get_StartDate" returnType="void" visibility="public"/>
+        <Method name="set_StartDate" returnType="void" visibility="public">
+          <Argument type="String" name="SD"/>
+        </Method>
+        <Method name="get_EndDate" returnType="void" visibility="public"/>
+        <Method name="set_EndDate" returnType="void" visibility="public">
+          <Argument type="String" name="ED"/>
+        </Method>
+        <Method name="FeedBack" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Servive_Payments" package="com.mycompany.tp6_part2" visibility="public" xPosition="2515.0" yPosition="1902.0">
+      <Fields>
+        <Field name="PaymentID" type="int" visibility="private"/>
+        <Field name="Amount" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="paymentID"/>
+          <Argument type="double" name="amount"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="get_PaymentID" returnType="void" visibility="public"/>
+        <Method name="set_PaymentID" returnType="int" visibility="public">
+          <Argument type="int" name="payment"/>
+        </Method>
+        <Method name="get_Amount" returnType="void" visibility="public"/>
+        <Method name="set_Amount" returnType="double" visibility="public">
+          <Argument type="double" name="amount"/>
+        </Method>
+        <Method name="FeedBack" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TP_Salle" package="com.mycompany.tp6_part2" visibility="public" xPosition="2239.0" yPosition="1268.0">
+      <Fields>
+        <Field name="isActive" type="Boolean" visibility="public"/>
+        <Field name="materials_TPSalle" type="ArrayList&lt;Materials&gt;" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="accessoire"/>
+          <Argument type="int" name="building_id"/>
+          <Argument type="String" name="building_name"/>
+          <Argument type="double" name="building_area"/>
+          <Argument type="int" name="Capacity"/>
+          <Argument type="Boolean" name="isActive"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="print_salleTP_infos" returnType="void" visibility="public"/>
+        <Method name="occupation" returnType="void" visibility="public"/>
+        <Method name="add_material_to_TPSalle" returnType="void" visibility="public">
+          <Argument type="Materials" name="item"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Service" package="com.mycompany.tp6_part2" visibility="public" xPosition="3315.0" yPosition="1628.0">
+      <Methods>
+        <Method name="FeedBack" returnType="String" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="com.mycompany.tp6_part2.Salle" target="com.mycompany.tp6_part2.Building"/>
+    <UseRelation source="com.mycompany.tp6_part2.Institution" target="com.mycompany.tp6_part2.Departement" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mycompany.tp6_part2.Block" target="com.mycompany.tp6_part2.Building" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dept" source="com.mycompany.tp6_part2.Block" target="com.mycompany.tp6_part2.Departement" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mycompany.tp6_part2.TP_Salle" target="com.mycompany.tp6_part2.Materials" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="com.mycompany.tp6_part2.Servive_Payments" target="com.mycompany.tp6_part2.Service"/>
+    <IsRelation name="is" source="com.mycompany.tp6_part2.PC" target="com.mycompany.tp6_part2.Materials"/>
+    <IsRelation name="is" source="com.mycompany.tp6_part2.DataShow" target="com.mycompany.tp6_part2.Materials"/>
+    <HasRelation name="materials_Salle" source="com.mycompany.tp6_part2.Salle" target="com.mycompany.tp6_part2.Materials" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Materials&gt;"/>
+    <IsRelation name="is" source="com.mycompany.tp6_part2.Printer" target="com.mycompany.tp6_part2.Materials"/>
+    <HasRelation name="materials_Amphitheater" source="com.mycompany.tp6_part2.Amphitheater" target="com.mycompany.tp6_part2.Materials" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Materials&gt;"/>
+    <IsRelation name="is" source="com.mycompany.tp6_part2.Amphitheater" target="com.mycompany.tp6_part2.Building"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="com.mycompany.tp6_part2.Service_Teaching" target="com.mycompany.tp6_part2.Service"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="com.mycompany.tp6_part2.Service_RH" target="com.mycompany.tp6_part2.Service"/>
+    <IsRelation name="is" source="com.mycompany.tp6_part2.Bureau" target="com.mycompany.tp6_part2.Building"/>
+    <HasRelation name="inst" source="com.mycompany.tp6_part2.Departement" target="com.mycompany.tp6_part2.Institution" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materials" source="com.mycompany.tp6_part2.Building" target="com.mycompany.tp6_part2.Materials" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Materials&gt;"/>
+    <HasRelation name="bl_liste" source="com.mycompany.tp6_part2.Departement" target="com.mycompany.tp6_part2.Block" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Block&gt;"/>
+    <HasRelation name="materials_TPSalle" source="com.mycompany.tp6_part2.TP_Salle" target="com.mycompany.tp6_part2.Materials" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Materials&gt;"/>
+    <UseRelation source="com.mycompany.tp6_part2.Amphitheater" target="com.mycompany.tp6_part2.Materials" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mycompany.tp6_part2.Bureau" target="com.mycompany.tp6_part2.Materials" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="com.mycompany.tp6_part2.TP_Salle" target="com.mycompany.tp6_part2.Salle"/>
+    <HasRelation name="materials_Bureau" source="com.mycompany.tp6_part2.Bureau" target="com.mycompany.tp6_part2.Materials" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Materials&gt;"/>
+    <UseRelation source="com.mycompany.tp6_part2.Salle" target="com.mycompany.tp6_part2.Materials" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="buildings" source="com.mycompany.tp6_part2.Block" target="com.mycompany.tp6_part2.Building" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Building&gt;"/>
+    <IsRelation name="is" source="com.mycompany.tp6_part2.Accessoires" target="com.mycompany.tp6_part2.Materials"/>
+    <HasRelation name="dpt_1" source="com.mycompany.tp6_part2.Institution" target="com.mycompany.tp6_part2.Departement" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="block" source="com.mycompany.tp6_part2.Building" target="com.mycompany.tp6_part2.Block" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dpt_2" source="com.mycompany.tp6_part2.Institution" target="com.mycompany.tp6_part2.Departement" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="com.mycompany.tp6_part2.Service" target="com.mycompany.tp6_part2.Departement" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
